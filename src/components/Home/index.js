@@ -30,11 +30,11 @@ const Home = ({ user }) => {
       <Container className="mt-4">
         <Row className="justify-content-center">
           <Col lg={6}>
-            <Card className="mb-3">
-              <Card.Title className="p-3">
+            <Card className="mb-3 dashboard">
+              <Card.Title className="p-3 dashboard">
                 <h4>Tests</h4>
               </Card.Title>
-              <Card.Body>
+              <Card.Body className={"dashboard"}>
                 <ul className="levels" onClick={(e) => handleLevelClick(e)}>
                   <li id={"easy1"}>
                     Easy <RightArrow />

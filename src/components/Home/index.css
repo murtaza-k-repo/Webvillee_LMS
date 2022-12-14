@@ -5,7 +5,7 @@
     transform: translate(-50%, -50%);
 }
 
-.card {
+.card .dashboard {
     min-height: 450px;
     max-height: 450px;
     /* overflow-y: auto;
@@ -14,11 +14,11 @@
 
 }
 
-.card-title {
+.card-title .dashboard {
     background-color: #f0f0f0;
 }
 
-.card-body {
+.card-body .dashboard {
     overflow: auto;
 }
 
