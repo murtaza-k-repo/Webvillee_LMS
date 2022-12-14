@@ -1,0 +1,38 @@
+.centerElement {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.carousel {
+    height: 250px;
+    background-color: transparent !important;
+}
+
+footer {
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    background-color: rgb(248, 249, 250);
+    width: 100%;
+    text-align: center;
+    height: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+@media screen and (max-width: 991px) {
+    footer {
+        position: relative;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .carousel {
+        height: 200px;
+    }
+}

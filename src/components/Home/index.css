@@ -1,0 +1,113 @@
+.centerElement {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card {
+    min-height: 450px;
+    max-height: 450px;
+    /* overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none; */
+
+}
+
+.card-title {
+    background-color: #f0f0f0;
+}
+
+.card-body {
+    overflow: auto;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    /* Remove scrollbar space */
+    background: transparent;
+    /* Optional: just make scrollbar invisible */
+}
+
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+
+
+.levels {
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.levels li {
+    box-sizing: border-box;
+    width: 15em;
+    height: 3em;
+    font-size: 20px;
+    border-radius: 0.5em;
+    margin: 0.5em;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.2);
+    color: white;
+    font-family: sans-serif;
+    text-transform: capitalize;
+    line-height: 3em;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.levels li:nth-child(odd) {
+    background: linear-gradient(to right, orange, tomato);
+    text-align: left;
+    padding-left: 10%;
+    transform: perspective(500px) rotateY(45deg);
+}
+
+.levels li:nth-child(even) {
+    background: linear-gradient(to left, orange, tomato);
+    text-align: right;
+    padding-right: 10%;
+    transform: perspective(500px) rotateY(-45deg);
+}
+
+.levels li:nth-child(odd):hover {
+    transform: perspective(280px) rotateY(45deg);
+    padding-left: 5%;
+}
+
+.levels li:nth-child(even):hover {
+    transform: perspective(280px) rotateY(-45deg);
+    padding-right: 5%;
+}
+
+.attempts {
+    list-style: none;
+    padding: 0;
+}
+
+.attempts li {
+    background: white;
+    padding: 15px 25px;
+    box-shadow: inset;
+    border: 1px solid lightgray;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.attempts li:hover {
+    background-color: #f0f0f0;
+}
+
+.icons {
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+
+}
