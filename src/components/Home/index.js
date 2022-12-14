@@ -31,10 +31,10 @@ const Home = ({ user }) => {
         <Row className="justify-content-center">
           <Col lg={6}>
             <Card className="mb-3 dashboard">
-              <Card.Title className="p-3 dashboard">
+              <Card.Title className="p-3 dashboard-title">
                 <h4>Tests</h4>
               </Card.Title>
-              <Card.Body className={"dashboard"}>
+              <Card.Body className="dashboard-body">
                 <ul className="levels" onClick={(e) => handleLevelClick(e)}>
                   <li id={"easy1"}>
                     Easy <RightArrow />
@@ -53,11 +53,11 @@ const Home = ({ user }) => {
             </Card>
           </Col>
           <Col lg={6}>
-            <Card className="mb-3">
-              <Card.Title className="p-3">
+            <Card className="mb-3 dashboard">
+              <Card.Title className="p-3 dashboard-title">
                 <h4>Previous Attempts</h4>
               </Card.Title>
-              <Card.Body>
+              <Card.Body className="dashboard-body">
                 <ul className="attempts" onClick={() => setShow(true)}>
                   <li className="justify-content-between">
                     <div>
