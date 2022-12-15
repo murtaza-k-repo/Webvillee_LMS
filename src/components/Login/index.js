@@ -30,7 +30,6 @@ const Login = () => {
   const user = useSelector((state) => state.userReducer.user);
 
   const getOtp = async (e) => {
-    console.log(number);
     e.preventDefault();
     setError("");
     if (number === "" || number === undefined)
@@ -40,7 +39,7 @@ const Login = () => {
       setResult(response);
       setFlag(true);
     } catch (err) {
-      setError(err.message);
+      setError("Please verify the Recaptha!");
     }
   };
 
@@ -69,10 +68,10 @@ const Login = () => {
   return !user ? (
     <Container className="centerElement">
       <Row className="justify-content-center">
-        <Col>
+        <Col lg={5}>
           <Card style={{ display: !flag ? "block" : "none" }}>
             <Card.Header>
-              <h4>Webvillee LMS</h4>
+              <h4>Login</h4>
             </Card.Header>
 
             <Form onSubmit={getOtp}>
