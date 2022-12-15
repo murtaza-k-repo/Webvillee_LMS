@@ -1,0 +1,9 @@
+.certImg {
+    height: auto;
+    width: 100%;
+    max-width: 600px;
+}
+
+.linkedInBtn>a>button {
+    padding: 8px 1rem !important;
+}

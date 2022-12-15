@@ -69,7 +69,7 @@ const Login = () => {
   return !user ? (
     <Container className="centerElement">
       <Row className="justify-content-center">
-        <Col md={8} lg={6}>
+        <Col>
           <Card style={{ display: !flag ? "block" : "none" }}>
             <Card.Header>
               <h4>Webvillee LMS</h4>

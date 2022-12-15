@@ -5,10 +5,10 @@ import {
   Nav,
   Navbar as NavbarContainer,
 } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useUserAuth } from "../../context/UserAuthContext";
 
-const Navbar = () => {
+const Navbar = ({ user }) => {
   const { logOut } = useUserAuth();
   const navigate = useNavigate();
   const handleLogout = async () => {
@@ -23,20 +23,28 @@ const Navbar = () => {
   return (
     <NavbarContainer bg="light" expand="lg">
       <Container fluid>
-        <NavbarContainer.Brand href="#">Webvillee LMS</NavbarContainer.Brand>
-        <NavbarContainer.Toggle aria-controls="navbarScroll" />
-        <NavbarContainer.Collapse
-          id="navbarScroll"
-          className="justify-content-end"
-        >
-          <Nav
-            className="my-2 my-lg-0"
-            style={{ maxHeight: "100px" }}
-            navbarScroll
-          >
-            <Button onClick={handleLogout}>Logout</Button>
-          </Nav>
-        </NavbarContainer.Collapse>
+        <NavbarContainer.Brand>
+          <Link to="/" style={{ color: "black", textDecoration: "none" }}>
+            Webvillee LMS
+          </Link>
+        </NavbarContainer.Brand>
+        {user && (
+          <>
+            <NavbarContainer.Toggle aria-controls="navbarScroll" />
+            <NavbarContainer.Collapse
+              id="navbarScroll"
+              className="justify-content-end"
+            >
+              <Nav
+                className="my-2 my-lg-0"
+                style={{ maxHeight: "100px" }}
+                navbarScroll
+              >
+                <Button onClick={handleLogout}>Logout</Button>
+              </Nav>
+            </NavbarContainer.Collapse>
+          </>
+        )}
       </Container>
     </NavbarContainer>
   );

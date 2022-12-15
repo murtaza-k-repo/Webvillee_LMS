@@ -3,11 +3,11 @@ import { Button, Card, Col, Container, Modal, Row } from "react-bootstrap";
 import { IoIosArrowDroprightCircle as RightArrow } from "react-icons/io";
 import { AiOutlineRight } from "react-icons/ai";
 import Carousel from "../Utility/Carousel";
-import Navbar from "../Utility/Navbar";
 import moment from "moment";
 
 import "./index.css";
 import { useNavigate } from "react-router-dom";
+import PreviousAttempt from "../PreviousAttempt";
 
 const Home = ({ user }) => {
   const [show, setShow] = useState(false);
@@ -25,7 +25,6 @@ const Home = ({ user }) => {
 
   return (
     <>
-      <Navbar />
       <Carousel />
       <Container className="mt-4">
         <Row className="justify-content-center">
@@ -138,66 +137,7 @@ const Home = ({ user }) => {
               </Card.Body>
             </Card>
           </Col>
-          <Modal
-            show={show}
-            onHide={() => setShow(false)}
-            size="lg"
-            aria-labelledby="contained-modal-title-vcenter"
-            centered
-          >
-            <Modal.Header closeButton>
-              <Modal.Title id="contained-modal-title-vcenter">
-                Modal heading
-              </Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              <h4>Centered Modal</h4>
-              <p>
-                Cras mattis consectetur purus sit amet fermentum. Cras justo
-                odio, dapibus ac facilisis in, egestas eget quam. Morbi leo
-                risus, porta ac consectetur ac, vestibulum at eros.
-              </p>
-            </Modal.Body>
-            <Modal.Footer>
-              <Button onClick={() => setShow(false)}>Close</Button>
-            </Modal.Footer>
-          </Modal>
-          {/* <Col xs={6} lg={3}>
-            <Card className="mb-3">
-              <Card.Body className="level-body">
-                <h5 className="text-center">
-                  Easy <RightArrow />
-                </h5>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col xs={6} lg={3}>
-            <Card className="mb-3">
-              <Card.Body className="level-body">
-                <h5 className="text-center">
-                  Medium <RightArrow />
-                </h5>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col xs={6} lg={3}>
-            <Card className="mb-3">
-              <Card.Body className="level-body">
-                <h5 className="text-center">
-                  Intermediate <RightArrow />
-                </h5>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col xs={6} lg={3}>
-            <Card className="mb-3">
-              <Card.Body className="level-body">
-                <h5 className="text-center">
-                  Advanced <RightArrow />
-                </h5>
-              </Card.Body>
-            </Card>
-          </Col> */}
+          <PreviousAttempt show={show} setShow={setShow} />
         </Row>
       </Container>
     </>

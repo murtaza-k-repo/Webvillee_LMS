@@ -6,6 +6,7 @@ import LoadingSpinner from "../components/Utility/LoadingSpinner";
 const Login = lazy(() => import("../components/Login"));
 const Home = lazy(() => import("../components/Home"));
 const Test = lazy(() => import("../components/Test"));
+const UserInfo = lazy(() => import("../components/UserInfo"));
 
 export const AppRoutes = ({ user }) => {
   return (
@@ -14,6 +15,7 @@ export const AppRoutes = ({ user }) => {
         <Route element={<PrivateRoutes />}>
           <Route path="/" element={<Home user={user} />} />
           <Route path="/test/:levelId" element={<Test />} />
+          <Route path="/user-info" element={<UserInfo />} />
         </Route>
         <Route path="/login" element={<Login />} />
       </Routes>
