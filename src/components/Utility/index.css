@@ -10,6 +10,10 @@
     background-color: transparent !important;
 }
 
+.initials-avatar {
+    background-color: teal;
+}
+
 footer {
     bottom: 0;
     left: 0;

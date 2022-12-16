@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Card, Col, Container, Modal, Row } from "react-bootstrap";
 import { IoIosArrowDroprightCircle as RightArrow } from "react-icons/io";
 import { AiOutlineRight } from "react-icons/ai";
 import Carousel from "../Utility/Carousel";
 import moment from "moment";
+import axios from "axios";
 
 import "./index.css";
 import { useNavigate } from "react-router-dom";
@@ -11,6 +12,8 @@ import PreviousAttempt from "../PreviousAttempt";
 
 const Home = ({ user }) => {
   const [show, setShow] = useState(false);
+  const [userInfo, setUserInfo] = useState({});
+  const [error, setError] = useState("");
 
   const navigate = useNavigate();
 
@@ -22,6 +25,26 @@ const Home = ({ user }) => {
       navigate(`/test/${e.target.id}`);
     }
   };
+
+  const getUserInfo = async () => {
+    try {
+      const data = await axios.get(
+        `${process.env.REACT_APP_LMS_API}/get-user-info/${user.uid}`
+      );
+
+      setUserInfo(data);
+    } catch (err) {
+      if (err?.response?.data?.msg?.includes("no user found")) {
+        navigate("/user-info", { replace: true });
+      } else {
+        setError(err?.response?.data?.msg);
+      }
+    }
+  };
+
+  useEffect(() => {
+    getUserInfo();
+  }, []);
 
   return (
     <>

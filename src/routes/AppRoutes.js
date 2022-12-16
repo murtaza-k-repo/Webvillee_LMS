@@ -8,14 +8,17 @@ const Home = lazy(() => import("../components/Home"));
 const Test = lazy(() => import("../components/Test"));
 const UserInfo = lazy(() => import("../components/UserInfo"));
 
-export const AppRoutes = ({ user }) => {
+export const AppRoutes = ({ user, userInfo }) => {
   return (
     <Suspense fallback={<LoadingSpinner />}>
       <Routes>
         <Route element={<PrivateRoutes />}>
           <Route path="/" element={<Home user={user} />} />
-          <Route path="/test/:levelId" element={<Test />} />
-          <Route path="/user-info" element={<UserInfo />} />
+          <Route
+            path="/test/:levelId"
+            element={<Test user={user} userInfo={userInfo} />}
+          />
+          <Route path="/user-info" element={<UserInfo user={user} />} />
         </Route>
         <Route path="/login" element={<Login />} />
       </Routes>

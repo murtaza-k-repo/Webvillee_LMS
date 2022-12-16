@@ -1,0 +1,29 @@
+{
+ "data" : [
+    {
+        "questionText" : "Choose the library/framework used in frontend?",
+        "options": ["Node", "React", "Php", "Python"],
+        "answer": "React"
+    },
+    {
+        "questionText" : "Choose the library/framework used in backend?",
+        "options": ["Node", "React", "NextJs", "Angular"],
+        "answer": "Node"
+    },
+    {
+        "questionText" : "Choose the fruit orange in color?",
+        "options": ["Banana", "Lemon", "Orange", "Guava"],
+        "answer": "Orange"
+    },
+    {
+        "questionText" : "Choose the best company in Indore?",
+        "options": ["Samosys", "Infosys", "Webvillee", "CIS"],
+        "answer": "Webvillee"
+    },
+    {
+        "questionText" : "Choose the best country in the world?",
+        "options": ["Japan", "Dubai", "USA", "India"],
+        "answer": "India"
+    }
+]
+}
