@@ -39,6 +39,7 @@ const Login = () => {
       setResult(response);
       setFlag(true);
     } catch (err) {
+      console.log(err);
       setError("Please verify the Recaptha!");
     }
   };
